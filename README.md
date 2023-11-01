@@ -11,3 +11,4 @@ So, the denominator of the resulting expression **P(poem)** is not dependent on 
 * The numerator **P(poem|author=k)P(author=k)** is now of importance. If the **Prior P(author)** is uniform i.e there is no reason as to why any particular answer will be more likely, given no information then, P(author=k) is also a **constant** and can be removed. This reduces the expression to the likelihood once again.<br/>
 ### 2) Language Model using Markov Model
 * In order to generate poems using Markov Models, we will use 2nd order Markov Models i.e the state at time t will depend on the state at time t-1 and t-2. The **State Transition Tensor** is now of 3 dimensions. The A matrix will be used to generate the 2nd word in the sequence, the pie vector will be used to generate the first word and the rest of the words will be generated(Sampled) from the State Transition Tensor.
+#### Code Discussion for the Language Model
