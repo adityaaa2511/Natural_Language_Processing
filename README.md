@@ -10,8 +10,8 @@ This repository contains NLP projects that I have created using data science and
 So, the denominator of the resulting expression **P(poem)** is not dependent on any author, therefore there is no need for its consideration.<br/>
 * The numerator **P(poem|author=k)P(author=k)** is now of importance. If the **Prior P(author)** is uniform i.e there is no reason as to why any particular answer will be more likely, given no information then, P(author=k) is also a **constant** and can be removed. This reduces the expression to the likelihood once again.<br/>
 ### 2) Language Model using Markov Model
-* In order to generate poems using Markov Models, we will use 2nd order Markov Models i.e the state at time t will depend on the state at time t-1 and t-2. The **State Transition Tensor** is now of 3 dimensions. The A matrix will be used to generate the 2nd word in the sequence, the pie vector will be used to generate the first word and the rest of the words will be generated(Sampled) from the State Transition Tensor.<br/>
-a) #### Code Discussion for the Language Model
+* In order to generate poems using Markov Models, we will use 2nd order Markov Models i.e the state at time t will depend on the state at time t-1 and t-2. The **State Transition Tensor** is now of 3 dimensions. The A matrix will be used to generate the 2nd word in the sequence, the pie vector will be used to generate the first word and the rest of the words will be generated(Sampled) from the State Transition Tensor.
+#### Code Discussion for the Language Model
 * First of all we will **remove punctuations** and **tokenize** the words in the dataset with the intention of eventually making a **dictionary** of words and corresponding probabilities. We will sample(generate) our words from this dictionary.
 * Next we create helper functions to maintain the words and their frequencies. We will include seperate conditions for the first word and the final word in one line of the poem.
 * Then we normalize the frequencies into probabilities for each of the dictionaries containing the samples for the next word.
