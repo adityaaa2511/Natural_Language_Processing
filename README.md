@@ -12,3 +12,8 @@ So, the denominator of the resulting expression **P(poem)** is not dependent on 
 ### 2) Language Model using Markov Model
 * In order to generate poems using Markov Models, we will use 2nd order Markov Models i.e the state at time t will depend on the state at time t-1 and t-2. The **State Transition Tensor** is now of 3 dimensions. The A matrix will be used to generate the 2nd word in the sequence, the pie vector will be used to generate the first word and the rest of the words will be generated(Sampled) from the State Transition Tensor.
 * #### Code Discussion for the Language Model
+* First of all we will **remove punctuations** and **tokenize** the words in the dataset with the intention of eventually making a **dictionary** of words and corresponding probabilities. We will sample(generate) our words from this dictionary.
+* Next we create helper functions to maintain the words and their frequencies. We will include seperate conditions for the first word and the final word in one line of the poem.
+* Then we normalize the frequencies into probabilities for each of the dictionaries containing the samples for the next word.
+* Lastly, we employ a similar function to the **np.random.choice** to sample a word based on sampling a number between 0 and 1 and using a cummulative score.
+* Voila, we now have our personal Robert Frost like Poem Generator!! 
