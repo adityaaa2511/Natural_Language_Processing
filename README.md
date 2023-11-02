@@ -16,4 +16,8 @@ So, the denominator of the resulting expression **P(poem)** is not dependent on 
 * Next we create helper functions to maintain the words and their frequencies. We will include seperate conditions for the first word and the final word in one line of the poem.
 * Then we normalize the frequencies into probabilities for each of the dictionaries containing the samples for the next word.
 * Lastly, we employ a similar function to the **np.random.choice** to sample a word based on sampling a number between 0 and 1 and using a cummulative score.
-* Voila, we now have our personal Robert Frost like Poem Generator!! 
+* Voila, we now have our personal Robert Frost like Poem Generator!!
+### 3) Cypher Decryption
+* We will create a **Probabilistic Model** of the English language and then make use of the **Bi-gram Markov Model**.
+* Sentences are made up of words and so, we will compute the probability of the occurrence of real words. Actual words will have higher probabilities and others will have a lesser probability. Here, also we will use **Add One-Smoothing** and **Log probabilities**.
+* Then we will utilise **Genetic Algorithms** to determine which encryption maping is the best suited for decryption. Basically, we will have a pool of mapping(which will be mutated via swaping) initially, take the best 5 suited mappings and then create offsprings(3 per each parent, so total remains at 20). We will again calculate the 5 best suited mappings(via log-likelihood) and repeat this process of a fixed amount of iterations.[2 advantages of employing this algorithm being that we will not be stuck at a local maxima nor do we need to check for all possible mappings(26!) to determine the best one which requires a huge chuck of time.]
